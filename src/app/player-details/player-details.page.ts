@@ -16,4 +16,7 @@ export class PlayerDetailsPage implements OnInit {
     console.log(this.player);
   }
 
+  modBtn(){
+    console.log("Modificar");
+  }
 }
