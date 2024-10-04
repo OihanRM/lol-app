@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{equipo.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Players</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item *ngFor="let player of equipo.players">
+          <ion-label>{{ player.rol }}</ion-label>
+          <ion-label class="clickable" (click)="onPlayerClick(player)">{{ player.name }}</ion-label>
+        </ion-item>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>W/L</ion-label>
+          <ion-label>
+            W: <span class="wins">{{ equipo.wins }}</span> 
+            L: <span class="loses">{{ equipo.loses }}</span>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

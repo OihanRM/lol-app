@@ -1,0 +1,16 @@
+.wins {
+    color: green;
+}
+.loses {
+    color: red;
+}
+.clickable {
+    cursor: pointer;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+  
+  .clickable:hover {
+    color: #007bff; 
+    text-decoration: underline;
+    
+}

@@ -12,6 +12,8 @@ export interface Equipo {
   name: string;
   region: string;
   players: Player[];
+  wins: number;
+  loses: number;
 }
 
 @Injectable({
@@ -24,7 +26,7 @@ export class EventosService {
   private equipos: Equipo[] = [];
 
   constructor() { 
-    // Definición de jugadores (40 jugadores)
+
     this.players = [
       { id: 1, name: 'Faker', surname: 'Lee', rol: 'Mid' },
       { id: 2, name: 'Doinb', surname: 'Kim', rol: 'Mid' },
@@ -68,7 +70,6 @@ export class EventosService {
       { id: 40, name: 'IWillDominate', surname: 'Dominate', rol: 'Jungle' },
     ];
 
-    // Definición de equipos (8 equipos)
     this.equipos = [
       { 
         id: 1, 
@@ -76,7 +77,9 @@ export class EventosService {
         region: 'LPL', 
         players: [
           this.players[0], this.players[5], this.players[15], this.players[19], this.players[24]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
       { 
         id: 2, 
@@ -84,7 +87,9 @@ export class EventosService {
         region: 'LPL', 
         players: [
           this.players[1], this.players[6], this.players[20], this.players[23], this.players[28]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
       { 
         id: 3, 
@@ -92,7 +97,9 @@ export class EventosService {
         region: 'LCK', 
         players: [
           this.players[2], this.players[7], this.players[21], this.players[22], this.players[27]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
       { 
         id: 4, 
@@ -100,7 +107,9 @@ export class EventosService {
         region: 'LCK', 
         players: [
           this.players[3], this.players[8], this.players[25], this.players[26], this.players[29]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
       { 
         id: 5, 
@@ -108,7 +117,9 @@ export class EventosService {
         region: 'LEC', 
         players: [
           this.players[4], this.players[9], this.players[30], this.players[33], this.players[36]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
       { 
         id: 6, 
@@ -116,7 +127,9 @@ export class EventosService {
         region: 'LEC', 
         players: [
           this.players[4], this.players[10], this.players[31], this.players[34], this.players[37]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
       { 
         id: 7, 
@@ -124,7 +137,9 @@ export class EventosService {
         region: 'LCS', 
         players: [
           this.players[6], this.players[11], this.players[32], this.players[35], this.players[38]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
       { 
         id: 8, 
@@ -132,8 +147,19 @@ export class EventosService {
         region: 'LCS', 
         players: [
           this.players[12], this.players[13], this.players[14], this.players[39], this.players[40]
-        ]
+        ],
+        wins: 0,
+        loses: 0
       },
     ];
+    
   }
+
+  getPlayers(): Player[] {
+    return this.players;
+  }
+  getEquipos(): Equipo[] {
+    return this.equipos;
+  }
+
 }
