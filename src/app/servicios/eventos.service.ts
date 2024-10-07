@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Player {
   id: number;
@@ -25,7 +26,7 @@ export class EventosService {
   private players: Player[] = [];
   private equipos: Equipo[] = [];
 
-  constructor() { 
+  constructor(private router: Router) { 
 
     this.players = [
       { id: 1, name: 'Faker', surname: 'Lee', rol: 'Mid' },
@@ -161,5 +162,14 @@ export class EventosService {
   getEquipos(): Equipo[] {
     return this.equipos;
   }
+  getEquipo(id: number) {
+    return this.equipos.find(equipo => equipo.id === id);
+  }
+  setPlayer(player: Player, equipo: Equipo) {
+    let index = equipo.players.findIndex(p => p.id === player.id);
+    if(index !== -1) {
+      equipo.players[index] = player
+    }
 
+  }
 }
